@@ -9,7 +9,6 @@ import com.sun.net.httpserver.HttpHandler;
 public class RootHandler extends Parser implements HttpHandler {
 
 	public void handle(HttpExchange he) throws IOException {
-		// showInfoRequest(he);
 		addCORS(he);
 		String response = "Servidor Funcionando Correctamente";
 		he.sendResponseHeaders(200, response.length());

@@ -1,14 +1,16 @@
 package metricas.mreuso.mgenericidad;
 
+import java.util.Map;
+
 public class FMFAC implements IMGenericidad {
 
 	private float FMFAC;
-	private float FFC; // pedir
-	private int Tc; // pedir
+	private float FFC;
+	private float Tc;
 
-	public FMFAC(Object Ctx) {
-		// this.FFC = Ctx.getFFC();
-		// this.Tc = Ctx.Tc();
+	public FMFAC(Map<String, Object> Ctx) {
+		this.FFC = Float.parseFloat(Ctx.get("FMFACFFC").toString());
+		this.Tc = Float.parseFloat(Ctx.get("FMFACTc").toString());
 	}
 
 	@Override
@@ -17,13 +19,12 @@ public class FMFAC implements IMGenericidad {
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
-		// No hacer nada
-	}
+	public void remove(IMGenericidad IMG) {}
 
 	@Override
-	public void Calcular() {
+	public String Calcular() {
 		this.FMFAC = this.FFC / this.Tc;
 		System.out.println("Metrica FMFAC: " + this.FMFAC);
+		return "\"FMFAC\":\""+String.format("%.4f", this.FMFAC)+"\"";
 	}
 }

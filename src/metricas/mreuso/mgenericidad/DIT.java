@@ -1,10 +1,12 @@
 package metricas.mreuso.mgenericidad;
 
+import java.util.Map;
+
 public class DIT implements IMGenericidad {
 
 	private float DIT;
 
-	public DIT(Object Ctx) {
+	public DIT(Map<String, Object> Ctx) {
 
 	}
 
@@ -14,13 +16,12 @@ public class DIT implements IMGenericidad {
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
-		// No hacer nada
-	}
+	public void remove(IMGenericidad IMG) {}
 
 	@Override
-	public void Calcular() {
-		// Esperar formula
+	public String Calcular() {
+		System.out.println("Metrica FHIJ: " + this.DIT);
+		return "\"DIT\":\""+String.format("%.4f", this.DIT)+"\"";	
 	}
 
 }

@@ -10,11 +10,11 @@ import com.sun.net.httpserver.HttpHandler;
 
 public class Cleaner extends Parser implements HttpHandler{
 	
-	ArrayList<String> Cat;
+	String Cat;
 	ArrayList<String> Met;
 	Map<String, Object> Dat;
 	
-	public Cleaner(ArrayList<String> cat, ArrayList<String> met, Map<String, Object> dat) {
+	public Cleaner(String cat, ArrayList<String> met, Map<String, Object> dat) {
 		this.Cat = cat;
 		this.Met = met;
 		this.Dat = dat;
@@ -22,7 +22,7 @@ public class Cleaner extends Parser implements HttpHandler{
 
 	public void handle(HttpExchange he) throws IOException {
 		addCORS(he);
-		 this.Cat.clear();
+		 this.Cat="";
 		 this.Met.clear();
 		 this.Dat.clear();
 		String response = "Datos Eliminados";

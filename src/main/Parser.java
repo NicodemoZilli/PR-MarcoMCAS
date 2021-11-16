@@ -63,6 +63,17 @@ public abstract class Parser {
 		}
 
 	}
+	public static void parseQuery(String query, String parameters) throws UnsupportedEncodingException {
+
+		if (query != null) {
+			String values [] = query.split("[&]");
+			for (String item : values) {
+				parameters+=item;
+			}
+
+		}
+
+	}
 
 	public static void addCORS(HttpExchange exchange) throws IOException {
 		exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "*");

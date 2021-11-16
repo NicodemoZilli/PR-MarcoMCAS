@@ -1,15 +1,16 @@
 package metricas.mreuso.mgenericidad;
 
+import java.util.Map;
+
 public class FHIAC implements IMGenericidad {
 
-	// Atributos para metrica Factor de Herencia de implementacion FHI
 	private float FHIAC;
-	private float FHIJ; // pedir
-	private int NOH; // pedir
+	private float FHIJ;
+	private float NOH;
 
-	public FHIAC(Object Ctx) {
-		// this.FHIJ = Ctx.getFHIJ();
-		// this.NOH = Ctx.NOH();
+	public FHIAC(Map<String, Object> Ctx) {
+		this.FHIJ = Float.parseFloat(Ctx.get("FHIACFHIJ").toString());
+		this.NOH = Float.parseFloat(Ctx.get("FHIACNOH").toString());
 	}
 
 	@Override
@@ -18,13 +19,12 @@ public class FHIAC implements IMGenericidad {
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
-		// No hacer nada
-	}
+	public void remove(IMGenericidad IMG) {}
 
 	@Override
-	public void Calcular() {
+	public String Calcular() {
 		this.FHIAC = this.FHIJ / this.NOH;
 		System.out.println("Metrica FHIAC: " + this.FHIAC);
+		return "\"FHIAC\":\""+String.format("%.4f", this.FHIAC)+"\"";
 	}
 }

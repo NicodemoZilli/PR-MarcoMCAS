@@ -1,10 +1,12 @@
 package metricas.mreuso.mgenericidad;
 
+import java.util.Map;
+
 public class NOC implements IMGenericidad {
 
 	private float NOC;
 
-	public NOC(Object Ctx) {
+	public NOC(Map<String, Object> Ctx) {
 
 	}
 
@@ -14,13 +16,12 @@ public class NOC implements IMGenericidad {
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
-		// No hacer nada
-	}
+	public void remove(IMGenericidad IMG) {}
 
 	@Override
-	public void Calcular() {
-		// Esperar formula
+	public String Calcular() {
+		System.out.println("Metrica FHIJ: " + this.NOC);
+		return "\"NOC\":\""+String.format("%.4f", this.NOC)+"\"";	
 	}
 
 }

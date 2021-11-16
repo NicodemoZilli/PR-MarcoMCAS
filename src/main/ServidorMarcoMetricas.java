@@ -7,7 +7,7 @@ import java.util.Map;
 import com.sun.net.httpserver.HttpServer;
 
 public class ServidorMarcoMetricas {
-	public static ArrayList<String> Cat = new ArrayList<String>();
+	public static String Cat = "";
 	public static ArrayList<String> Met = new ArrayList<String>();
 	public static Map<String, Object> Dat = new HashMap<String, Object>();
 	

@@ -4,16 +4,15 @@ import java.util.Map;
 
 public class FHI implements IMGenericidad {
 
-	// Atributos para metrica Factor de Herencia de implementacion FHI
 	private float FHI;
-	private float Mv; // pedir
-	private float Mnv; // pedir
-	private float Tm; // pedir
+	private float Mv;
+	private float Mnv;
+	private float Tm; 
 
 	public FHI( Map<String, Object> Ctx) {
-		this.Mv = Float.parseFloat((String) Ctx.get("Mv"));
-		this.Mnv = Float.parseFloat((String) Ctx.get("Mnv"));
-		this.Tm = Float.parseFloat((String) Ctx.get("Tm"));
+		this.Mv = Float.parseFloat(Ctx.get("FHIMv").toString());
+		this.Mnv = Float.parseFloat(Ctx.get("FHIMnv").toString());
+		this.Tm = Float.parseFloat(Ctx.get("FHITm").toString());
 	}
 
 	@Override
@@ -22,13 +21,10 @@ public class FHI implements IMGenericidad {
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
-		// No hacer nada
-	}
+	public void remove(IMGenericidad IMG) {}
 
 	@Override
 	public String Calcular() {
-	
 		this.FHI = (this.Mv + this.Mnv)/this.Tm;
 		System.out.println("Metrica FHI: " + this.FHI);
 		return "\"FHI\":\""+String.format("%.4f", this.FHI)+"\"";
