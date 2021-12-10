@@ -43,5 +43,4 @@ public class LMetricasMPC implements IMProteccionComportamiento{
 		this.LisMet.forEach(IMProteccionComportamiento::Calcular);
 	}
 
-
 }
