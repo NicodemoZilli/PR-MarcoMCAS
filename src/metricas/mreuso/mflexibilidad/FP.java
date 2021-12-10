@@ -17,7 +17,6 @@ public class FP implements MFlexibilidad {
 		this.Ctx = Ctx;
 		this.TC = Float.parseFloat(this.Ctx.getDato("FPTC").toString());
 
-		
 		this.Mn = new float [(int) this.TC];
 		this.Mo = new float [(int) this.TC];
 		this.DC = new float [(int) this.TC];
