@@ -19,8 +19,8 @@ public class LMetricasMPE implements IMProteccionEstado{
 	 	{
 			switch(metrica) {
 				case "PMFP": this.add(new PMFP(this.Ctx)); break;
-				//case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
-				//case "PMFF": this.add(new PMFF(this.Ctx)); break;
+				case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
+				case "PMFF": this.add(new PMFF(this.Ctx)); break;
 			}
 	 	}
 	}
