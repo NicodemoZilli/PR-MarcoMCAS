@@ -6,13 +6,13 @@ import java.util.List;
 import main.Contexto;
 
 
-public class LMetricasMPC implements IMProteccionComportamiento{
+public class LMetricasMPC implements MProteccionComportamiento{
 
-	private List<IMProteccionComportamiento> LisMet;
+	private List<MProteccionComportamiento> LisMet;
 	private Contexto Ctx;
 	
 	public LMetricasMPC(Contexto Ctx) {
-		this.LisMet = new ArrayList<IMProteccionComportamiento>();
+		this.LisMet = new ArrayList<MProteccionComportamiento>();
 		this.Ctx = Ctx;
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
@@ -27,20 +27,20 @@ public class LMetricasMPC implements IMProteccionComportamiento{
 	}
 
 	@Override
-	public void add(IMProteccionComportamiento IMPC) {
+	public void add(MProteccionComportamiento IMPC) {
 		assert IMPC != null;
 		this.LisMet.add(IMPC);
 	}
 
 	@Override
-	public void remove(IMProteccionComportamiento IMPC) {
+	public void remove(MProteccionComportamiento IMPC) {
 		assert IMPC != null;
 		this.LisMet.remove(IMPC);
 	}
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(IMProteccionComportamiento::Calcular);
+		this.LisMet.forEach(MProteccionComportamiento::Calcular);
 	}
 
 }

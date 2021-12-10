@@ -1,8 +1,8 @@
 package metricas.mreuso.mmodularidad.mautonomia.maislamiento;
 
-import metricas.mreuso.mmodularidad.mautonomia.IMAutonomia;
+import metricas.mreuso.mmodularidad.mautonomia.MAutonomia;
 
-public class MAislamiento implements IMAutonomia{
+public class MAislamiento implements MAutonomia{
 
 	@Override
 	public void Calcular() {

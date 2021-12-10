@@ -6,14 +6,14 @@ import java.util.List;
 import main.Contexto;
 
 
-public class LMetricasMPE implements IMProteccionEstado{
+public class LMetricasMPE implements MProteccionEstado{
 	
 	private Contexto Ctx;
-	private List<IMProteccionEstado> LisMet;
+	private List<MProteccionEstado> LisMet;
 
 	public LMetricasMPE(Contexto Ctx) {
 		this.Ctx = Ctx;
-		this.LisMet = new ArrayList<IMProteccionEstado>();
+		this.LisMet = new ArrayList<MProteccionEstado>();
 		
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
@@ -26,20 +26,20 @@ public class LMetricasMPE implements IMProteccionEstado{
 	}
 
 	@Override
-	public void add(IMProteccionEstado IMPE) {
+	public void add(MProteccionEstado IMPE) {
 		assert IMPE != null;
 		this.LisMet.add(IMPE);
 	}
 
 	@Override
-	public void remove(IMProteccionEstado IMPE) {
+	public void remove(MProteccionEstado IMPE) {
 		assert IMPE != null;
 		this.LisMet.remove(IMPE);
 	}
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(IMProteccionEstado::Calcular);
+		this.LisMet.forEach(MProteccionEstado::Calcular);
 	}
 
 }

@@ -1,6 +1,6 @@
 package metricas.mreuso.mmodularidad.mlegibilidad;
 
-public class WMC implements IMLegibilidad{
+public class WMC implements MLegibilidad{
 	
 	private float WMC;
 	
@@ -12,11 +12,11 @@ public class WMC implements IMLegibilidad{
 	}
 
 	@Override
-	public void add(IMLegibilidad IML) {
+	public void add(MLegibilidad IML) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");
 	}
 
 	@Override
-	public void remove(IMLegibilidad IML) {}
+	public void remove(MLegibilidad IML) {}
 
 }

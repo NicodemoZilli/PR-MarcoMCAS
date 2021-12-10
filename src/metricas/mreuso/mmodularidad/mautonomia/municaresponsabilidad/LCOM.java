@@ -1,6 +1,6 @@
 package metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad;
 
-public class LCOM implements IMUnicaResponsabilidad{
+public class LCOM implements MUnicaResponsabilidad{
 	
 	private float LCOM;
 	
@@ -12,11 +12,11 @@ public class LCOM implements IMUnicaResponsabilidad{
 	}
 
 	@Override
-	public void add(IMUnicaResponsabilidad IMUR) {
+	public void add(MUnicaResponsabilidad IMUR) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(IMUnicaResponsabilidad IMUR) {}
+	public void remove(MUnicaResponsabilidad IMUR) {}
 
 }

@@ -4,30 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LMetricasML implements IMLegibilidad{
+public class LMetricasML implements MLegibilidad{
 	
 	
-	private List<IMLegibilidad> LisMet;
+	private List<MLegibilidad> LisMet;
 
 	public LMetricasML() {
 		this.LisMet = new ArrayList<>();
 	}
 
 	@Override
-	public void add(IMLegibilidad IML) {
+	public void add(MLegibilidad IML) {
 		assert IML != null;
 		this.LisMet.add(IML);
 	}
 
 	@Override
-	public void remove(IMLegibilidad IML) {
+	public void remove(MLegibilidad IML) {
 		assert IML != null;
 		this.LisMet.remove(IML);
 	}
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(IMLegibilidad::Calcular);
+		this.LisMet.forEach(MLegibilidad::Calcular);
 	}
 
 }

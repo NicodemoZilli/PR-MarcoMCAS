@@ -7,13 +7,13 @@ import main.Contexto;
 
 
 
-public class LMetricasMI implements IMIndependencia{
+public class LMetricasMI implements MIndependencia{
 	
-	private List<IMIndependencia> LisMet;
+	private List<MIndependencia> LisMet;
 	private Contexto Ctx;
 	
 	public LMetricasMI(Contexto Ctx) {
-		this.LisMet = new ArrayList<IMIndependencia>();
+		this.LisMet = new ArrayList<MIndependencia>();
 		this.Ctx = Ctx;
 		
 		for(String metrica : this.Ctx.getMetricas()) 
@@ -28,17 +28,17 @@ public class LMetricasMI implements IMIndependencia{
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(IMIndependencia::Calcular);
+		this.LisMet.forEach(MIndependencia::Calcular);
 	}
 
 	@Override
-	public void add(IMIndependencia IMI) {
+	public void add(MIndependencia IMI) {
 		assert IMI != null;
 		this.LisMet.add(IMI);
 	}
 
 	@Override
-	public void remove(IMIndependencia IMI) {
+	public void remove(MIndependencia IMI) {
 		assert IMI != null;
 		this.LisMet.remove(IMI);
 	}

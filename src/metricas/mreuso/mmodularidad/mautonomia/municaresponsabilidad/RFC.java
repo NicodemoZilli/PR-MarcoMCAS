@@ -1,6 +1,6 @@
 package metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad;
 
-public class RFC implements IMUnicaResponsabilidad{
+public class RFC implements MUnicaResponsabilidad{
 	
 	private float RFC;
 	
@@ -12,11 +12,11 @@ public class RFC implements IMUnicaResponsabilidad{
 	}
 
 	@Override
-	public void add(IMUnicaResponsabilidad IMUR) {
+	public void add(MUnicaResponsabilidad IMUR) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(IMUnicaResponsabilidad IMUR) {}
+	public void remove(MUnicaResponsabilidad IMUR) {}
 
 }

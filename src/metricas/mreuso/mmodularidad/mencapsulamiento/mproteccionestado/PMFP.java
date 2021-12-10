@@ -2,7 +2,7 @@ package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado;
 
 import main.Contexto;
 
-public class PMFP implements IMProteccionEstado{
+public class PMFP implements MProteccionEstado{
 	
 	private Contexto Ctx;
 	private float PMFP;
@@ -36,11 +36,11 @@ public class PMFP implements IMProteccionEstado{
 	}
 
 	@Override
-	public void add(IMProteccionEstado IMP) {
+	public void add(MProteccionEstado IMP) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(IMProteccionEstado IMP) {}	
+	public void remove(MProteccionEstado IMP) {}	
 
 }

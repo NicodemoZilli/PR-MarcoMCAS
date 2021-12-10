@@ -2,7 +2,7 @@ package metricas.mreuso.mmodularidad.mautonomia.mindependencia;
 
 import main.Contexto;
 
-public class CBO implements IMIndependencia {
+public class CBO implements MIndependencia {
 
 	private float CBO;
 	private Contexto Ctx;
@@ -17,11 +17,11 @@ public class CBO implements IMIndependencia {
 	}
 
 	@Override
-	public void add(IMIndependencia IMI) {
+	public void add(MIndependencia IMI) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(IMIndependencia IMI) {}
+	public void remove(MIndependencia IMI) {}
 
 }

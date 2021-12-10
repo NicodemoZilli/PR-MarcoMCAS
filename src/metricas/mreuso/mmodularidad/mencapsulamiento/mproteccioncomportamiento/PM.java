@@ -2,7 +2,7 @@ package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento;
 
 import main.Contexto;
 
-public class PM implements IMProteccionComportamiento{
+public class PM implements MProteccionComportamiento{
 	
 	private Contexto Ctx;
 	private float PM;
@@ -23,11 +23,11 @@ public class PM implements IMProteccionComportamiento{
 	}
 
 	@Override
-	public void add(IMProteccionComportamiento IMP) {
+	public void add(MProteccionComportamiento IMP) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(IMProteccionComportamiento IMP) {}
+	public void remove(MProteccionComportamiento IMP) {}
 
 }
