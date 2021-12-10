@@ -2,35 +2,46 @@ package metricas.mreuso.mgenericidad;
 
 import java.util.ArrayList;
 import java.util.List;
+import main.Contexto;
 
-public class LMetricasMG implements IMGenericidad {
+public class LMetricasMG implements MGenericidad {
 
-	private List<IMGenericidad> LisMet;
+	private List<MGenericidad> LisMet;
+	private Contexto Ctx;
 
-	public LMetricasMG() {
-		this.LisMet = new ArrayList<>();
+	public LMetricasMG( Contexto Ctx) {
+		this.Ctx = Ctx;
+		this.LisMet = new ArrayList<MGenericidad>();
+		
+		for(String metrica : this.Ctx.getMetricas()) 
+	 	{
+			switch(metrica) {
+				case "DIT": this.add(new DIT(this.Ctx)); break;
+				case "NOC": this.add(new NOC(this.Ctx)); break;
+				case "FHI": this.add(new FHI(this.Ctx)); break;
+				case "FHIJ": this.add(new FHIJ(this.Ctx)); break;
+				case "FFC": this.add(new FFC(this.Ctx)); break;
+				case "FHIAC": this.add(new FHIAC(this.Ctx)); break;
+				case "FMFAC": this.add(new FMFAC(this.Ctx)); break;
+			}
+	 	}
 	}
 
 	@Override
-	public void add(IMGenericidad IMG) {
+	public void add(MGenericidad IMG) {
 		assert IMG != null;
 		this.LisMet.add(IMG);
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {
+	public void remove(MGenericidad IMG) {
 		assert IMG != null;
 		this.LisMet.remove(IMG);
 	}
 
 	@Override
-	public String Calcular() {
-		String resp = "";
-		for(int i=0; i<this.LisMet.size(); i++) {
-			resp += this.LisMet.get(i).Calcular();
-			if(i<(this.LisMet.size()-1)) resp += ",";
-		}
-		return resp;
+	public void Calcular() {
+		this.LisMet.forEach(MGenericidad::Calcular);
 	}
 
 }

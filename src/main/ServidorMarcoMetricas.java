@@ -1,34 +1,35 @@
 package main;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import com.sun.net.httpserver.HttpServer;
 
 public class ServidorMarcoMetricas {
-	public static String Cat = "";
-	public static ArrayList<String> Met = new ArrayList<String>();
-	public static Map<String, Object> Dat = new HashMap<String, Object>();
+	
+	private static int port;
+	private static HttpServer server;
+	private static Contexto Ctx;
 	
 	public static void main(String[] args) {
+		port=9009;
+		Ctx= new Contexto();
 		
 		try {
-			final int port = 9009;
-			HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+			server = HttpServer.create(new InetSocketAddress(port), 0);
 			System.out.println("Servidor iniciado en el puerto: " + port);
 			server.createContext("/", new RootHandler());
-			server.createContext("/setCat", new SetCat(Cat));
-			server.createContext("/setMet", new SetMet(Met));
-			server.createContext("/setDat", new SetDat(Dat));
-			server.createContext("/Execute", new Cliente(Cat,Met,Dat));
-			server.createContext("/DeleteData", new Cleaner(Cat,Met,Dat));
+			server.createContext("/setCat", new SetCat(Ctx));
+			server.createContext("/setMet", new SetMet(Ctx));
+			server.createContext("/setDat", new SetDat(Ctx));
+			server.createContext("/Execute", new Cliente(Ctx));
+			server.createContext("/DeleteData", new Cleaner(Ctx));		
 			server.setExecutor(null);
 			server.start();
-		}catch(Exception e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 	}
 }
+
 

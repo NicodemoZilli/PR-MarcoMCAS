@@ -1,27 +1,29 @@
 package metricas.mreuso.mgenericidad;
 
-import java.util.Map;
+import main.Contexto;
 
-public class DIT implements IMGenericidad {
+public class DIT implements MGenericidad {
 
 	private float DIT;
+	private Contexto Ctx;
 
-	public DIT(Map<String, Object> Ctx) {
 
+	public DIT(Contexto Ctx) {
+		this.Ctx = Ctx;
 	}
 
 	@Override
-	public void add(IMGenericidad IMG) {
+	public void add(MGenericidad IMG) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {}
+	public void remove(MGenericidad IMG) {}
 
 	@Override
-	public String Calcular() {
+	public void Calcular() {
 		System.out.println("Metrica FHIJ: " + this.DIT);
-		return "\"DIT\":\""+String.format("%.4f", this.DIT)+"\"";	
+		this.Ctx.addResponse("\"DIT\":\""+String.format("%.4f", this.DIT)+"\"");	
 	}
 
 }

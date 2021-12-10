@@ -1,11 +1,16 @@
 package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado;
 
+import main.Contexto;
+
 public class PMFP implements IMProteccionEstado{
 	
-	
+	private Contexto Ctx;
 	private float PMFP;
+	private float NTC;
 	
-	public PMFP() {}
+	public PMFP(Contexto Ctx) {
+		this.Ctx = Ctx;
+	}
 	
 	@Override
 	public void Calcular() {

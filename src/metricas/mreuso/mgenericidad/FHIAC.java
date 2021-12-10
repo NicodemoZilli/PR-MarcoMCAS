@@ -1,30 +1,33 @@
 package metricas.mreuso.mgenericidad;
 
-import java.util.Map;
+import main.Contexto;
 
-public class FHIAC implements IMGenericidad {
+public class FHIAC implements MGenericidad {
 
 	private float FHIAC;
 	private float FHIJ;
 	private float NOH;
+	private Contexto Ctx;
 
-	public FHIAC(Map<String, Object> Ctx) {
-		this.FHIJ = Float.parseFloat(Ctx.get("FHIACFHIJ").toString());
-		this.NOH = Float.parseFloat(Ctx.get("FHIACNOH").toString());
+
+	public FHIAC(Contexto Ctx) {
+		this.Ctx = Ctx;
+		this.FHIJ = Float.parseFloat(this.Ctx.getDato("FHIACFHIJ").toString());
+		this.NOH = Float.parseFloat(this.Ctx.getDato("FHIACNOH").toString());
 	}
 
 	@Override
-	public void add(IMGenericidad IMG) {
+	public void add(MGenericidad IMG) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {}
+	public void remove(MGenericidad IMG) {}
 
 	@Override
-	public String Calcular() {
+	public void Calcular() {
 		this.FHIAC = this.FHIJ / this.NOH;
 		System.out.println("Metrica FHIAC: " + this.FHIAC);
-		return "\"FHIAC\":\""+String.format("%.4f", this.FHIAC)+"\"";
+		this.Ctx.addResponse("\"FHIAC\":\""+String.format("%.4f", this.FHIAC)+"\"");
 	}
 }

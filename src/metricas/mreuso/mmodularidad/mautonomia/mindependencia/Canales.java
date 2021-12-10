@@ -1,10 +1,15 @@
 package metricas.mreuso.mmodularidad.mautonomia.mindependencia;
 
+import main.Contexto;
+
 public class Canales implements IMIndependencia {
 
 	private float Canales;
+	private Contexto Ctx;
 	
-	public Canales() {}
+	public Canales(Contexto Ctx) {
+		this.Ctx = Ctx;
+	}
 	
 	@Override
 	public void Calcular() {

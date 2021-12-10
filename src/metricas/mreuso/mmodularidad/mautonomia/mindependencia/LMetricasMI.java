@@ -3,13 +3,27 @@ package metricas.mreuso.mmodularidad.mautonomia.mindependencia;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.Contexto;
+
+
 
 public class LMetricasMI implements IMIndependencia{
 	
 	private List<IMIndependencia> LisMet;
+	private Contexto Ctx;
 	
-	public LMetricasMI() {
-		this.LisMet = new ArrayList<>();
+	public LMetricasMI(Contexto Ctx) {
+		this.LisMet = new ArrayList<IMIndependencia>();
+		this.Ctx = Ctx;
+		
+		for(String metrica : this.Ctx.getMetricas()) 
+	 	{
+			switch(metrica) {
+				case "Canales": this.add(new Canales(this.Ctx)); break;	
+				case "CBO": this.add(new CBO(this.Ctx)); break;	
+				
+			}
+	 	}
 	}
 
 	@Override

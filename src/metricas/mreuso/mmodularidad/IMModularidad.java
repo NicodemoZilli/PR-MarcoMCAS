@@ -1,7 +1,7 @@
 package metricas.mreuso.mmodularidad;
 
-import metricas.mreuso.IMReuso;
+import metricas.mreuso.MReuso;
 
-public interface IMModularidad extends IMReuso {
+public interface IMModularidad extends MReuso {
 
 }

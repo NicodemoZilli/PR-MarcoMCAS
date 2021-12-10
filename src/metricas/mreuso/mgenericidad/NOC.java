@@ -1,27 +1,28 @@
 package metricas.mreuso.mgenericidad;
 
-import java.util.Map;
+import main.Contexto;
 
-public class NOC implements IMGenericidad {
+public class NOC implements MGenericidad {
 
 	private float NOC;
-
-	public NOC(Map<String, Object> Ctx) {
-
+	private Contexto Ctx;
+		
+	public NOC(Contexto Ctx) {
+		this.Ctx = Ctx;
 	}
 
 	@Override
-	public void add(IMGenericidad IMG) {
+	public void add(MGenericidad IMG) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");
 	}
 
 	@Override
-	public void remove(IMGenericidad IMG) {}
+	public void remove(MGenericidad IMG) {}
 
 	@Override
-	public String Calcular() {
+	public void Calcular() {
 		System.out.println("Metrica FHIJ: " + this.NOC);
-		return "\"NOC\":\""+String.format("%.4f", this.NOC)+"\"";	
+		this.Ctx.addResponse("\"NOC\":\""+String.format("%.4f", this.NOC)+"\"");	
 	}
 
 }
