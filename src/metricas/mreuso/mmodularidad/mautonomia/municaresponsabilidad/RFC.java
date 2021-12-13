@@ -6,19 +6,19 @@ public class RFC implements MUnicaResponsabilidad{
 	
 	private  Contexto Ctx;
 	private float RFC;
-	private float n;
-	private float m;
+	private float NML;
+	private float NMR;
 	
 	public RFC(Contexto Ctx) {
 		this.Ctx = Ctx;
-		this.n = Float.parseFloat(this.Ctx.getDato("RFCn").toString());
-		this.m = Float.parseFloat(this.Ctx.getDato("RFCm").toString());
+		this.NML = Float.parseFloat(this.Ctx.getDato("RFCNML").toString());
+		this.NMR = Float.parseFloat(this.Ctx.getDato("RFCNMR").toString());
 	}
 	@Override
 	public void Calcular() {
-		this.RFC = this.n / this.m;
+		this.RFC = this.NML + this.NMR;
 		System.out.println("Metrica RFC: " + this.RFC);
-		this.Ctx.addResponse("\"RFC\":\""+String.format("%.4f", this.RFC)+"\"");
+		this.Ctx.addResponse("\"RFC\":\""+String.format("%.1f", this.RFC)+"\"");
 	}
 
 	@Override
