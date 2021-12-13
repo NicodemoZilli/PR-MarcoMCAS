@@ -1,14 +1,24 @@
 package metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad;
 
+import main.Contexto;
+
 public class RFC implements MUnicaResponsabilidad{
 	
+	private  Contexto Ctx;
 	private float RFC;
+	private float n;
+	private float m;
 	
-	public RFC() {}
-
+	public RFC(Contexto Ctx) {
+		this.Ctx = Ctx;
+		this.n = Float.parseFloat(this.Ctx.getDato("RFCn").toString());
+		this.m = Float.parseFloat(this.Ctx.getDato("RFCm").toString());
+	}
 	@Override
 	public void Calcular() {
-		this.RFC=0;
+		this.RFC = this.n / this.m;
+		System.out.println("Metrica RFC: " + this.RFC);
+		this.Ctx.addResponse("\"RFC\":\""+String.format("%.4f", this.RFC)+"\"");
 	}
 
 	@Override

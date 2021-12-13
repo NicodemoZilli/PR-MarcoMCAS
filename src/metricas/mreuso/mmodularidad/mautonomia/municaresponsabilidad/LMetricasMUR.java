@@ -2,9 +2,7 @@ package metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import main.Contexto;
-
 
 public class LMetricasMUR implements MUnicaResponsabilidad {
 	
@@ -12,7 +10,15 @@ public class LMetricasMUR implements MUnicaResponsabilidad {
 	private List<MUnicaResponsabilidad> LisMet;
 	
 	public LMetricasMUR(Contexto Ctx) {
-		this.LisMet = new ArrayList<>();
+		this.LisMet = new ArrayList<MUnicaResponsabilidad>();
+		this.Ctx = Ctx;
+		for(String metrica : this.Ctx.getMetricas()) 
+	 	{
+			switch(metrica) {
+				case "LCOM": this.add(new LCOM(this.Ctx));	break;
+				case "RFC": this.add(new RFC(this.Ctx));  break;
+			}
+	 	}
 	}
 
 	@Override
