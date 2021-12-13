@@ -82,11 +82,11 @@ public class Contexto {
 					case "PEstado" : this.oMRE = new LMetricasMPE(this); break;
 					case "PComportamiento" : this.oMRE = new LMetricasMPC(this); break;
 					case "Independencia" : this.oMRE = new LMetricasMI(this); break;
-//					case "UnicaResponsabilidad" : this.oMRE = new LMetricasMUR(this); break;
-//					case "Aislamiento" :  break;
+					case "UnicaResponsabilidad" : this.oMRE = new LMetricasMUR(this); break;
+					case "Aislamiento" :  break;
 				}
+				 this.oMRE.Calcular();
 			}
-			 this.oMRE.Calcular();
 		}catch(Exception e) {
 			this.Response = "{\"message\":"
 					+ "{\"tit\":\"Error\","
