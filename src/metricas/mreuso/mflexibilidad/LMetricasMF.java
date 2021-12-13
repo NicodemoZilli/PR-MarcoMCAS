@@ -23,8 +23,6 @@ public class LMetricasMF implements MFlexibilidad {
 	 	}
 	}
 	
-	
-
 	@Override
 	public void add(MFlexibilidad IMF) {
 		assert IMF != null;
