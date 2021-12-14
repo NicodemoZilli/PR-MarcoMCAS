@@ -1,12 +1,12 @@
 package metricas.mreuso.mgenericidad;
 
-import metricas.mreuso.MReuso;
-
 /**
- * @author Nicodemo Zilli
+ * @author David Nicodemo Zilli Vazquez
  * @version 1.0
- * @created 07-oct.-2021
+ * @created Oct Dic 2021
  */
+
+import metricas.mreuso.MReuso;
 
 public interface MGenericidad extends MReuso {
 	

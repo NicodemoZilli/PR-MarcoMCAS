@@ -1,10 +1,15 @@
 package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento;
 
+/**
+ * @author David Nicodemo Zilli Vazquez
+ * @version 1.0
+ * @created Oct Dic 2021
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
 import main.Contexto;
-
 
 public class LMetricasMPC implements MProteccionComportamiento{
 
@@ -19,9 +24,9 @@ public class LMetricasMPC implements MProteccionComportamiento{
 			switch(metrica) {
 				case "PM": this.add(new PM(this.Ctx)); break;
 				case "TPM": this.add(new TPM(this.Ctx)); break;
-//				case "PMFP": this.add(new PMFP(this.Ctx)); break;
-//				case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
-//				case "PMFF": this.add(new PMFF(this.Ctx)); break;
+				case "PMFP": this.add(new PMFP(this.Ctx)); break;
+				case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
+				case "PMFF": this.add(new PMFF(this.Ctx)); break;
 			}
 	 	}
 	}

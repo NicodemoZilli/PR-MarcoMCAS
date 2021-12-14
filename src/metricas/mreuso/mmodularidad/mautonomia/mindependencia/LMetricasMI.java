@@ -1,11 +1,15 @@
 package metricas.mreuso.mmodularidad.mautonomia.mindependencia;
 
+/**
+ * @author David Nicodemo Zilli Vazquez
+ * @version 1.0
+ * @created Oct Dic 2021
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
 import main.Contexto;
-
-
 
 public class LMetricasMI implements MIndependencia{
 	
@@ -21,7 +25,6 @@ public class LMetricasMI implements MIndependencia{
 			switch(metrica) {
 				case "Canales": this.add(new Canales(this.Ctx)); break;	
 				case "CBO": this.add(new CBO(this.Ctx)); break;	
-				
 			}
 	 	}
 	}

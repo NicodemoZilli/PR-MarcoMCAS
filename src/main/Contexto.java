@@ -1,5 +1,11 @@
 package main;
 
+/**
+ * @author David Nicodemo Zilli Vazquez
+ * @version 1.0
+ * @created Oct Dic 2021
+ */
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,13 +18,6 @@ import metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad.LMetricasMU
 import metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento.LMetricasMPC;
 import metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado.LMetricasMPE;
 import metricas.mreuso.mmodularidad.mlegibilidad.LMetricasML;
-
-
-/**
- * @author Nicodemo Zilli
- * @version 1.0
- * @created 07-oct.-2021
- */
 
 public class Contexto {
 
@@ -78,7 +77,7 @@ public class Contexto {
 				switch (categoria) {
 					case "Genericidad" : this.oMRE = new LMetricasMG(this); break;
 					case "Flexibilidad" : this.oMRE = new LMetricasMF(this); break;
-//					case "Legibilidad" : this.oMRE = new LMetricasML(this); break;
+					case "Legibilidad" : this.oMRE = new LMetricasML(this); break;
 					case "PEstado" : this.oMRE = new LMetricasMPE(this); break;
 					case "PComportamiento" : this.oMRE = new LMetricasMPC(this); break;
 					case "Independencia" : this.oMRE = new LMetricasMI(this); break;

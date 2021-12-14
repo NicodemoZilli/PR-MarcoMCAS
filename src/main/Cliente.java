@@ -1,10 +1,15 @@
 package main;
 
+/**
+ * @author David Nicodemo Zilli Vazquez
+ * @version 1.0
+ * @created Oct Dic 2021
+ */
+
 import java.io.IOException;
 import java.io.OutputStream;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-
 
 public class  Cliente extends Parser implements HttpHandler {
 	

@@ -1,0 +1,13 @@
+main
+metricas.mreuso
+metricas.mreuso.mflexibilidad
+metricas.mreuso.mgenericidad
+metricas.mreuso.mmodularidad
+metricas.mreuso.mmodularidad.mautonomia
+metricas.mreuso.mmodularidad.mautonomia.maislamiento
+metricas.mreuso.mmodularidad.mautonomia.mindependencia
+metricas.mreuso.mmodularidad.mautonomia.municaresponsabilidad
+metricas.mreuso.mmodularidad.mencapsulamiento
+metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento
+metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado
+metricas.mreuso.mmodularidad.mlegibilidad

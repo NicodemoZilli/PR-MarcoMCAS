@@ -1,5 +1,11 @@
 package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado;
 
+/**
+ * @author David Nicodemo Zilli Vazquez
+ * @version 1.0
+ * @created Oct Dic 2021
+ */
+
 import main.Contexto;
 
 public class PMFPR implements MProteccionEstado{
