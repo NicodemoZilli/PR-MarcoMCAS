@@ -8,7 +8,7 @@ package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento;
 
 import main.Contexto;
 
-public class PMFPR implements MProteccionComportamiento{
+public class PMFPR2 implements MProteccionComportamiento{
 	
 	private Contexto Ctx;
 	private float PMFPR;
@@ -17,7 +17,7 @@ public class PMFPR implements MProteccionComportamiento{
 	private float NTF[];
 	private float sumFPRNTF;
 	
-	public PMFPR(Contexto Ctx) {
+	public PMFPR2(Contexto Ctx) {
 		this.Ctx = Ctx;
 		this.NTJ = Float.parseFloat(this.Ctx.getDato("PMFPRNTJ").toString());
 		

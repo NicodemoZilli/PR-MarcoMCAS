@@ -24,7 +24,7 @@ public class LMetricasMI implements MIndependencia{
 	 	{
 			switch(metrica) {
 				case "Canales": this.add(new Canales(this.Ctx)); break;	
-				case "CBO": this.add(new CBO(this.Ctx)); break;	
+				case "COF": this.add(new COF(this.Ctx)); break;	
 			}
 	 	}
 	}

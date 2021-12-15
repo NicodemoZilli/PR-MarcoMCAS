@@ -24,9 +24,9 @@ public class LMetricasMPC implements MProteccionComportamiento{
 			switch(metrica) {
 				case "PM": this.add(new PM(this.Ctx)); break;
 				case "TPM": this.add(new TPM(this.Ctx)); break;
-				case "PMFP": this.add(new PMFP(this.Ctx)); break;
-				case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
-				case "PMFF": this.add(new PMFF(this.Ctx)); break;
+				case "PMFP": this.add(new PMFP2(this.Ctx)); break;
+				case "PMFPR": this.add(new PMFPR2(this.Ctx)); break;
+				case "PMFF": this.add(new PMFF2(this.Ctx)); break;
 			}
 	 	}
 	}
