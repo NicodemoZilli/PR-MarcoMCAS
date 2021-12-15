@@ -18,15 +18,17 @@ public class LMetricasMPE implements MProteccionEstado{
 	public LMetricasMPE(Contexto Ctx) {
 		this.Ctx = Ctx;
 		this.LisMet = new ArrayList<MProteccionEstado>();
-		
-		for(String metrica : this.Ctx.getMetricas()) 
-	 	{
-			switch(metrica) {
-				case "PMFP": this.add(new PMFP(this.Ctx)); break;
-				case "PMFPR": this.add(new PMFPR(this.Ctx)); break;
-				case "PMFF": this.add(new PMFF(this.Ctx)); break;
+
+		for(String metrica : this.Ctx.getMetricas())
+		{
+			if(metrica.equals("PMFP")) {
+				this.add(new PMFP(this.Ctx));
+			}else if(metrica.equals("PMFPR")) {
+				this.add(new PMFPR(this.Ctx));
+			}else if(metrica.equals("PMFF")) {
+				this.add(new PMFF(this.Ctx));
 			}
-	 	}
+		}
 	}
 
 	@Override
@@ -43,7 +45,9 @@ public class LMetricasMPE implements MProteccionEstado{
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MProteccionEstado::Calcular);
+		for(MProteccionEstado item : this.LisMet){
+			item.Calcular();
+		}
 	}
 
 }

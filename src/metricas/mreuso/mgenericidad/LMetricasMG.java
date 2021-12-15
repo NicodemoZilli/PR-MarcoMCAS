@@ -21,14 +21,20 @@ public class LMetricasMG implements MGenericidad {
 		
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "DIT": this.add(new DIT(this.Ctx)); break;
-				case "NOC": this.add(new NOC(this.Ctx)); break;
-				case "FHI": this.add(new FHI(this.Ctx)); break;
-				case "FHIJ": this.add(new FHIJ(this.Ctx)); break;
-				case "FFC": this.add(new FFC(this.Ctx)); break;
-				case "FHIAC": this.add(new FHIAC(this.Ctx)); break;
-				case "FMFAC": this.add(new FMFAC(this.Ctx)); break;
+			if(metrica.equals("DIT")) {
+				this.add(new DIT(this.Ctx));
+			}else if(metrica.equals("NOC")){
+				this.add(new NOC(this.Ctx));
+			}else if(metrica.equals("FHI")){
+				this.add(new FHI(this.Ctx));
+			}else if(metrica.equals("FHIJ")){
+				this.add(new FHIJ(this.Ctx));
+			}else if(metrica.equals("FFC")){
+				this.add(new FFC(this.Ctx));
+			}else if(metrica.equals("FHIAC")){
+				this.add(new FHIAC(this.Ctx));
+			}else if(metrica.equals("FMFAC")) {
+				this.add(new FMFAC(this.Ctx));
 			}
 	 	}
 	}
@@ -47,7 +53,9 @@ public class LMetricasMG implements MGenericidad {
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MGenericidad::Calcular);
+		for (MGenericidad item : this.LisMet) {
+			item.Calcular();
+		}
 	}
 
 }

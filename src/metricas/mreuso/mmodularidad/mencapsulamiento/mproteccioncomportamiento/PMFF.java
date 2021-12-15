@@ -1,16 +1,8 @@
-package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccionestado;
-
+package metricas.mreuso.mmodularidad.mencapsulamiento.mproteccioncomportamiento;
 
 import main.Contexto;
 
-/**
- * @author David Nicodemo Zilli Vazquez
- * @version 1.0
- * @created Oct Dic 2021
- */
-
-
-public class PMFF implements MProteccionEstado{
+public class PMFF implements MProteccionComportamiento{
 	
 	private Contexto Ctx;
 	private float PMFF;
@@ -32,12 +24,12 @@ public class PMFF implements MProteccionEstado{
 	}
 
 	@Override
-	public void add(MProteccionEstado IMP) {
+	public void add(MProteccionComportamiento IMP) {
 		throw new UnsupportedOperationException("Operacion no Soportada en add");		
 	}
 
 	@Override
-	public void remove(MProteccionEstado IMP) {}
+	public void remove(MProteccionComportamiento IMP) {}
 
 	
 

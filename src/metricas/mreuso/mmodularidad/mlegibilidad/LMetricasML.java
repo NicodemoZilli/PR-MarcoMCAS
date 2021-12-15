@@ -23,10 +23,12 @@ public class LMetricasML implements MLegibilidad{
 		this.LisMet = new ArrayList<MLegibilidad>();
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "LOC": this.add(new LOC(this.Ctx)); break;	
-				case "CC": this.add(new CC(this.Ctx)); break;	
-				case "WMC": this.add(new WMC(this.Ctx));
+			if(metrica.equals("LOC")) {
+				this.add(new LOC(this.Ctx));
+			}else if(metrica.equals("CC")) {
+				this.add(new CC(this.Ctx));
+			}else if(metrica.equals("WMC")){
+				this.add(new WMC(this.Ctx));
 			}
 	 	}
 	}
@@ -45,7 +47,9 @@ public class LMetricasML implements MLegibilidad{
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MLegibilidad::Calcular);
+		for(MLegibilidad item : this.LisMet){
+			item.Calcular();
+		}
 	}
 
 }

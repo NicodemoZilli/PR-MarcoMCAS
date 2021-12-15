@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.Contexto;
+import metricas.mreuso.mgenericidad.DIT;
+import metricas.mreuso.mgenericidad.MGenericidad;
 
 public class LMetricasMI implements MIndependencia{
 	
@@ -22,16 +24,19 @@ public class LMetricasMI implements MIndependencia{
 		
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "Canales": this.add(new Canales(this.Ctx)); break;	
-				case "COF": this.add(new COF(this.Ctx)); break;	
+			if(metrica.equals("Canales")) {
+				this.add(new Canales(this.Ctx));
+			}else if(metrica.equals("COF")) {
+				this.add(new COF(this.Ctx));
 			}
 	 	}
 	}
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MIndependencia::Calcular);
+		for (MIndependencia item : this.LisMet) {
+			item.Calcular();
+		}
 	}
 
 	@Override

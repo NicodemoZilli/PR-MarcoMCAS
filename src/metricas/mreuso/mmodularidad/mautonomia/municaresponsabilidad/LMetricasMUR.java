@@ -20,16 +20,19 @@ public class LMetricasMUR implements MUnicaResponsabilidad {
 		this.Ctx = Ctx;
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "LCOM": this.add(new LCOM(this.Ctx));	break;
-				case "RFC": this.add(new RFC(this.Ctx));  break;
+			if(metrica.equals("LCOM")) {
+				this.add(new LCOM(this.Ctx));
+			}else if(metrica.equals("RFC")){
+				this.add(new RFC(this.Ctx));
 			}
 	 	}
 	}
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MUnicaResponsabilidad::Calcular);
+		for (MUnicaResponsabilidad item : this.LisMet) {
+			item.Calcular();
+		}
 	}
 
 	@Override

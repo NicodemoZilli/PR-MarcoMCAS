@@ -21,9 +21,10 @@ public class LMetricasMF implements MFlexibilidad {
 		this.Ctx = Ctx;
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "FA": this.add(new FA(this.Ctx));	break;
-				case "FP": this.add(new FP(this.Ctx));  break;
+			if(metrica.equals("FA")) {
+				this.add(new FA(this.Ctx));
+			}else if(metrica.equals("FP")){
+				this.add(new FP(this.Ctx));
 			}
 	 	}
 	}
@@ -42,7 +43,9 @@ public class LMetricasMF implements MFlexibilidad {
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MFlexibilidad::Calcular);
+		for (MFlexibilidad item : this.LisMet) {
+			item.Calcular();
+		}
 	}
 
 }

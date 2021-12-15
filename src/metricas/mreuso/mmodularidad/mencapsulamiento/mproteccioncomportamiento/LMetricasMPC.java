@@ -21,12 +21,16 @@ public class LMetricasMPC implements MProteccionComportamiento{
 		this.Ctx = Ctx;
 		for(String metrica : this.Ctx.getMetricas()) 
 	 	{
-			switch(metrica) {
-				case "PM": this.add(new PM(this.Ctx)); break;
-				case "TPM": this.add(new TPM(this.Ctx)); break;
-				case "PMFP": this.add(new PMFP2(this.Ctx)); break;
-				case "PMFPR": this.add(new PMFPR2(this.Ctx)); break;
-				case "PMFF": this.add(new PMFF2(this.Ctx)); break;
+			if(metrica.equals("PM")) {
+				this.add(new PM(this.Ctx));
+			}else if(metrica.equals("TPM")) {
+				this.add(new TPM(this.Ctx));
+			}else if(metrica.equals("PMFP")) {
+				this.add(new PMFP2(this.Ctx));
+			}else if(metrica.equals("PMFPR")) {
+				this.add(new PMFPR2(this.Ctx));
+			}else if(metrica.equals("PMFF")) {
+				this.add(new PMFF2(this.Ctx));
 			}
 	 	}
 	}
@@ -45,7 +49,9 @@ public class LMetricasMPC implements MProteccionComportamiento{
 
 	@Override
 	public void Calcular() {
-		this.LisMet.forEach(MProteccionComportamiento::Calcular);
+		for (MProteccionComportamiento item : this.LisMet) {
+			item.Calcular();
+		}
 	}
 
 }
